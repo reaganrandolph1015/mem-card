@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/Style.css';
 import logo from '../imgs/logo.png';
 
 const Header = (props) => {
@@ -7,7 +8,7 @@ const Header = (props) => {
       <div className="header-container-logo">
         <img alt="NBA logo" src={logo} height="50px" />
       </div>
-      <div className="header-container-scores">
+      <div className="header-container-scores" style={{ color: 'white' }}>
         <p className="scores">Score: {props.score}</p>
         <p className="scores">Highscore: {props.highscore}</p>
       </div>
