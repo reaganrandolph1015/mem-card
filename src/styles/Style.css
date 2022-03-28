@@ -1,12 +1,8 @@
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-
-/* Document
-   ========================================================================== */
-
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 html {
   line-height: 1.15; /* 1 */
@@ -22,6 +18,7 @@ html {
 
 body {
   margin: 0;
+  font-family: 'Open Sans';
 }
 
 /**
@@ -356,12 +353,18 @@ template {
   display: flex;
   justify-content: space-between;
   background-color: #1d2d44;
+  height: 100px;
+  align-items: center;
 }
 
 .header-container-scores {
   position: relative;
   display: flex;
-  justify-content: space-evenly;
-  width: 235px;
-  right: 10px;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: 40px;
+  width: 300px;
+  right: 20px;
+  font-size: 25px;
+  font-weight: bolder;
 }
