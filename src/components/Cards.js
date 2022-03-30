@@ -18,8 +18,7 @@ import uniqid from 'uniqid';
 import '../styles/Style.css';
 
 const Cards = (props) => {
-  //TODO: ADD MORE PLAYERS↓, TOTAL: 15, +3 PLAYERS/RD, RD=5/5
-  //TODO: MED=EMBIID, JOKIC, GIANNIS / HARD=BOOKER, DONOVAN, TATUM / HARDX= MURRAY, MIDDLETON, PORZINGIS / HARDXX=AUSTIN REAVES, CLAXTON, SLOMO
+  //TODO: FINISH ARRAY
   const players = [
     {
       id: uniqid(),
