@@ -349,6 +349,13 @@ template {
 
 /***********************************************************************************/
 
+.card {
+  height: 200px;
+  width: 150px;
+  margin: 10px;
+  cursor: pointer;
+}
+
 .header-container {
   display: flex;
   justify-content: space-between;
@@ -367,4 +374,17 @@ template {
   right: 20px;
   font-size: 25px;
   font-weight: bolder;
+}
+
+.main-container {
+  background-color: #181818;
+}
+
+.player-image {
+  height: 150px;
+  width: 150px;
+}
+
+.player-name {
+  color: white;
 }

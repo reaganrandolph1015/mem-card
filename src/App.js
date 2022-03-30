@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
-import CardList from './components/CardList';
+import GameContainer from './components/GameContainer';
+import PlayerName from './components/PlayerName';
+import Cards from './components/Cards';
 
 function App() {
   const [score, setScore] = useState(0);
@@ -18,7 +20,14 @@ function App() {
   return (
     <div className="main-container">
       <Header score={score} highscore={highscore} />
-      <CardList players={activePlayer} />
+      <Cards />
+      <PlayerName />
+      <GameContainer
+        score={score}
+        highscore={highscore}
+        updateScore={updateScore}
+        updateHighscore={updateHighscore}
+      />
     </div>
   );
 }
