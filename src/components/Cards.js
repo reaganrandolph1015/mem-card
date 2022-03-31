@@ -116,15 +116,21 @@ const Cards = (props) => {
     },
   ];
 
-  const playerMap = players.map((player) => (
-    <ImageName key={player.id} src={player.img} name={player.name} />
+  // map through obj array and insert elements into ImageName component
+  const player = players.map((player) => (
+    <ImageName
+      key={player.id}
+      src={player.img}
+      name={player.name}
+      validate={props.validate}
+    />
   ));
 
-  const playerLog = players.map((player) => ({ player }));
+  //TODO: TEST
+  const player2 = props.name.map((named) => named);
+  //console.log(player2);
 
-  console.log(playerLog);
-
-  return <div className="card-list">{playerMap}</div>;
+  return <div className="card-list">{player}</div>;
 };
 
 export default Cards;

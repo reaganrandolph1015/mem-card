@@ -1,3 +1,53 @@
+.card {
+  height: 200px;
+  width: 150px;
+  margin: 10px;
+  cursor: pointer;
+  background-color: #efead73f;
+  border: solid black 2px;
+  border-radius: 4px;
+}
+
+.game-overlay.hidden {
+  display: none;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #1d2d44;
+  height: 100px;
+  align-items: center;
+}
+
+.header-container-scores {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: 40px;
+  width: 300px;
+  right: 20px;
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.main-container {
+  background-color: #0d1321;
+}
+
+.player-image {
+  height: 150px;
+  width: 150px;
+}
+
+.player-name {
+  color: white;
+  text-align: center;
+}
+
+/***********************************************************************************/
+
 *,
 *::before,
 *::after {
@@ -345,50 +395,4 @@ template {
 
 [hidden] {
   display: none;
-}
-
-/***********************************************************************************/
-
-.card {
-  height: 200px;
-  width: 150px;
-  margin: 10px;
-  cursor: pointer;
-  background-color: #efead73f;
-  border: solid black 2px;
-  border-radius: 4px;
-}
-
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  background-color: #1d2d44;
-  height: 100px;
-  align-items: center;
-}
-
-.header-container-scores {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  margin-left: auto;
-  margin-right: 40px;
-  width: 300px;
-  right: 20px;
-  font-size: 25px;
-  font-weight: bolder;
-}
-
-.main-container {
-  background-color: #0d1321;
-}
-
-.player-image {
-  height: 150px;
-  width: 150px;
-}
-
-.player-name {
-  color: white;
-  text-align: center;
 }

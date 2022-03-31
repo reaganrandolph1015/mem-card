@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header';
 import GameContainer from './components/GameContainer';
+import Overlay from './components/Overlay';
 import PlayerName from './components/PlayerName';
-import Cards from './components/Cards';
+import './styles/Style.css';
 
 function App() {
   const [score, setScore] = useState(0);
   const [highscore, setHighscore] = useState(0);
-  const [activePlayer, setActivePlayer] = useState([]);
+  const [overlayActive, setOverlayActive] = useState(false);
+  const [restartedGame, setRestartedGame] = useState(false);
 
   const updateScore = () => {
     setScore(score + 1);
@@ -17,16 +19,37 @@ function App() {
     setHighscore(score);
   };
 
+  const toggleOverlay = () => {
+    setOverlayActive(!overlayActive);
+    console.log('toggleOverlay() called');
+  };
+
+  const restartGame = () => {
+    setScore(0);
+    toggleOverlay();
+    setRestartedGame(true);
+  };
+
+  const toggleRestartedGame = (val) => {
+    setRestartedGame(val);
+  };
+
   return (
     <div className="main-container">
       <Header score={score} highscore={highscore} />
-      <Cards />
-      <PlayerName />
       <GameContainer
         score={score}
         highscore={highscore}
         updateScore={updateScore}
         updateHighscore={updateHighscore}
+        toggleOverlay={toggleOverlay}
+        restartedGame={restartedGame}
+        toggleRestartedGame={toggleRestartedGame}
+      />
+      <Overlay
+        score={score}
+        overlayActive={overlayActive}
+        restartGame={restartGame}
       />
     </div>
   );

@@ -1,41 +1,117 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import uniqid from 'uniqid';
 
 //TODO: TEST
 const PlayerName = () => {
-  const [player, setPlayer] = useState([]);
+  const players = [
+    {
+      id: uniqid(),
+      name: 'LeBron James',
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const url = 'https://www.balldontlie.io/api/v1/players';
-      let result = null;
-      try {
-        result = await axios(url, {
-          headers: {
-            Accept: 'application/json',
-          },
-        });
-      } catch (e) {
-        console.log(e);
-      }
-      // show API data
-      setPlayer(result.data.data);
-    };
+      tier: 'easy',
+    },
+    {
+      id: uniqid(),
+      name: 'Stephen Curry',
 
-    fetchData();
-  }, []);
+      tier: 'easy',
+    },
+    {
+      id: uniqid(),
+      name: 'Kevin Durant',
 
-  // console.log(player);
+      tier: 'easy',
+    },
+    // MEDIUM PLAYERS
+    {
+      id: uniqid(),
+      name: 'Joel Embiid',
 
-  let playerNameMap = player.map((player, key) => {
-    return (
-      <li key={key}>
-        {player.first_name} {player.last_name}
-      </li>
-    );
-  });
+      tier: 'medium',
+    },
+    {
+      id: uniqid(),
+      name: 'Nikola Jokic',
 
-  return <ul>{playerNameMap}</ul>;
+      tier: 'medium',
+    },
+    {
+      id: uniqid(),
+      name: 'Luka Doncic',
+
+      tier: 'medium',
+    },
+    // HARD PLAYERS
+    {
+      id: uniqid(),
+      name: 'Devin Booker',
+
+      tier: 'hard',
+    },
+    {
+      id: uniqid(),
+      name: 'Donovan Mitchell',
+
+      tier: 'hard',
+    },
+    {
+      id: uniqid(),
+      name: 'Jayson Tatum',
+
+      tier: 'hard',
+    },
+    // HARD+ PLAYERS
+    {
+      id: uniqid(),
+      name: 'Jamal Murray',
+
+      tier: 'hard+',
+    },
+    {
+      id: uniqid(),
+      name: 'Kris Middleton',
+
+      tier: 'hard+',
+    },
+    {
+      id: uniqid(),
+      name: 'Kristaps Porzingis',
+
+      tier: 'hard+',
+    },
+    // HARD++ PLAYERS
+    {
+      id: uniqid(),
+      name: 'Austin Reaves',
+
+      tier: 'hard++',
+    },
+    {
+      id: uniqid(),
+      name: 'Nicolas Claxton',
+
+      tier: 'hard++',
+    },
+    {
+      id: uniqid(),
+      name: 'Kyle Anderson',
+
+      tier: 'hard++',
+    },
+  ];
+
+  const playerNameArray = players.map((player) => player.name);
+  console.log(playerNameArray);
+
+  //TODO: TEST
+  const filtered = [{ name: '' }];
+  for (let i = 0; i < players.length; i++) {
+    filtered.push(players[i].name);
+  }
+  console.log(filtered);
+
+  return playerNameArray;
 };
 
 export default PlayerName;

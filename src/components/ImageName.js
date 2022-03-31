@@ -1,9 +1,9 @@
 import React from 'react';
 import '../styles/Style.css';
 
-function ImageName(props) {
+const ImageName = (props) => {
   return (
-    <div className="card">
+    <div className="card" onClick={() => props.validate(props.name)}>
       <div className="player-image-container">
         <img className="player-image" src={props.src} alt={props.name} />
       </div>
@@ -12,6 +12,6 @@ function ImageName(props) {
       </div>
     </div>
   );
-}
+};
 
 export default ImageName;
